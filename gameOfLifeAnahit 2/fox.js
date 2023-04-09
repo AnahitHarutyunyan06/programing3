@@ -1,8 +1,7 @@
-class Fox {
+class Fox extends LivingCreature{
     constructor(x, y) {
-        this.x = x
-        this.y = y
-        this.energy = 30
+       super(x,y)
+        this.energy =10
         this.directions = []
     }
 

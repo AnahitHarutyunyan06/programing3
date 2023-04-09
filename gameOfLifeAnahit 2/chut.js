@@ -1,7 +1,6 @@
-class Chut  {
+class Chut extends LivingCreature{
     constructor(x, y) {
-        this.x = x
-        this.y = y
+      super(x,y)
         this.energy = 26
         this.directions = []
     }
