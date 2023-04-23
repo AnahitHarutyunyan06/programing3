@@ -2,7 +2,7 @@ let LivingCreature = require("./LivingCreature")
 module.exports =class Fox extends LivingCreature{
     constructor(x, y) {
        super(x,y)
-        this.energy =10
+        this.energy  =  10
         this.directions = []
     }
 
@@ -49,12 +49,12 @@ module.exports =class Fox extends LivingCreature{
 
     mul() {
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell[Math.floor(math.random()* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random()* emptyCell.length)]
         if (newCell) {
             let newX = newCell[0]
             let newY = newCell[1]
 
-            matrix[newY][newX] =5
+            matrix[newY][newX] =    5
 
             let fox = new Fox(newX, newY)
 
@@ -67,9 +67,9 @@ module.exports =class Fox extends LivingCreature{
 
     eat() {
         let emptyCell = this.chooseCell(1, 2)
-        let newCell = emptyCell[Math.floor(math.random()* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random()* emptyCell.length)]
         if (newCell) {
-            this.energy += 10
+            this.energy += 6
             let newX = newCell[0]
             let newY = newCell[1]
 
@@ -86,7 +86,7 @@ module.exports =class Fox extends LivingCreature{
             }
 
 
-            matrix[newY][newX] =5
+            matrix[newY][newX] = 5
             matrix[this.y][this.x] = 0
 
 
@@ -105,7 +105,7 @@ module.exports =class Fox extends LivingCreature{
 
     move(){
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell[Math.floor(math.random()* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random()* emptyCell.length)]
             if(newCell){
                 let newX = newCell[0]
                 let newY = newCell[1]
@@ -117,7 +117,6 @@ module.exports =class Fox extends LivingCreature{
                 this.y = newY
 
                 this.energy--
-
                 if(this.energy < 0){
                     this.die ()
                 }

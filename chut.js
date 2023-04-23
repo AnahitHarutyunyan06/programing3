@@ -2,56 +2,53 @@ let LivingCreature = require("./LivingCreature")
 module.exports =class Chut extends LivingCreature{
     constructor(x, y) {
       super(x,y)
-        this.energy = 26
-        this.directions = []
+        this.energy = 25
     }
 
 
-    getNewCoordinates() {
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
+    // getNewCoordinates() {
+    //     this.directions = [
+    //         [this.x - 1, this.y - 1],
+    //         [this.x, this.y - 1],
+    //         [this.x + 1, this.y - 1],
+    //         [this.x - 1, this.y],
+    //         [this.x + 1, this.y],
+    //         [this.x - 1, this.y + 1],
+    //         [this.x, this.y + 1],
+    //         [this.x + 1, this.y + 1]
+    //     ];
+    // }
 
-    chooseCell(char, char1) {
-        this.getNewCoordinates()
-        let found = []
-
-
-        for (let i in this.directions) {
-            let x = this.directions[i][0]
-            let y = this.directions[i][1]
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == char) {
-                    found.push(this.directions[i])
-                }
-            }
-
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == char1) {
-                    found.push(this.directions[i])
-                }
-            }
-        }
+    // chooseCell(char, char1) {
+    //     this.getNewCoordinates()
+    //     let found = []
 
 
-        return found
+    //     for (let i in this.directions) {
+    //         let x = this.directions[i][0]
+    //         let y = this.directions[i][1]
+    //         if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
+    //             if (matrix[y][x] == char) {
+    //                 found.push(this.directions[i])
+    //             }
+    //         }
 
-    }
+    //         if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
+    //             if (matrix[y][x] == char1) {
+    //                 found.push(this.directions[i])
+    //             }
+    //         }
+    //     }
+
+
+    //     return found
 
 
     mul() {
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell[Math.floor(math.random()* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random()* emptyCell.length)]
 
-        if (newCell) {
+        if (newCell ) {
             let newX = newCell[0]
             let newY = newCell[1]
 
@@ -68,7 +65,7 @@ module.exports =class Chut extends LivingCreature{
 
     eat() {
         let emptyCell = this.chooseCell(1, 2)
-        let newCell = emptyCell[Math.floor(math.random()* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random()* emptyCell.length)]
         if (newCell) {
             this.energy += 12
             let newX = newCell[0]
@@ -106,11 +103,10 @@ module.exports =class Chut extends LivingCreature{
 
     move(){
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell[Math.floor(math.random()* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random()* emptyCell.length)]
             if(newCell){
                 let newX = newCell[0]
                 let newY = newCell[1]
-
                 matrix[newY][newX] = 4
                 matrix[this.y][this.x] = 0
                 
@@ -123,19 +119,20 @@ module.exports =class Chut extends LivingCreature{
                     this.die ()
                 }
             }
+            else {
+                this.energy--;
+                if (this.energy < 0) {
+                    this.die();
+                }
+            }
      }
 
-
-
      die(){
-        matrix[this.y][this.x] = 0
-
-          for(let i in chutArr){
+        for(let i = 0 ; i < chutArr.length; i++){
                    if(this.x == chutArr[i].x && this.y == chutArr[i].y) {
                              chutArr.splice(i,1)
                    }
           }
+          matrix[this.y][this.x] = 0
     }
-
-
 }
