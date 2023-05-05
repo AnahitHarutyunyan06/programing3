@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            margin-left: 33%;
+            margin-top: 10%;
+        }
+
+        body {
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgb(80, 73, 211) 0%, rgb(26, 37, 62) 42%, rgb(103, 23, 223) 83%);
+        }
+
+        h1 {
+            text-shadow: black 2px 2px;
+            font-style: italic;
+            color: white;
+            text-align: center;
+        }
+
+        h2 {
+            text-shadow: black 2px 2px;
+            font-style: italic;
+            color: white;
+            text-align: center;
+        }
+        table, th, td {
+          border:4px solid rgb(255, 213, 181);
+          font-size: 18px;
+          font-style: italic;
+
+        }
+        body{
+            background: linear-gradient(0.25turn, #B266FF, #9933FF, #7F00FF);
+        }
+        .orange{
+            background-color:orange;
+        }
+        .white{
+            background-color:white;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+        .black{
+            background-color:black;
+        }
+        .brown{
+            background-color:brown;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+        </style>
+</head>
+<body>
+
+
+    <table style="width:100%">
+        <tr>
+          <th>Title</th>
+          <th>Discription</th>
+          <th>Color</th>
+        </tr>
+        <tr>
+          <td> carrot- 🥕</td>
+          <td>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam:</td>
+          <td class="orange"></td>
+        </tr>
+        <tr>
+          <td>rabbit - 🐰</td>
+          <td>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</td>
+          <td class="white"></td>
+        </tr>
+        <td>fox 🦊- </td>
+          <td>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</td>
+          <td class="yellow"></td>
+        </tr>
+        <tr>
+          <td>wolf - 🐺</td>
+          <td>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</td>
+          <td class="black"></td>
+        
+        <tr>
+          <td>bear - 🐻</td>
+          <td>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</td>
+          <td class="brown"></td>
+        </tr>
+        <td>lion - 🦁</td>
+          <td>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</td>
+          <td class="yellow"></td>
+        </tr>
+        
+      </table>
+
+<div class="all__btns">
+    <button onclick="AddCarrot()" class="add__btn" style= "background-color: green">AddCaroot</button>
+    <button onclick="AddRabbit()" class="add__btn" style="background-color: yellow; color: black">AddRabbit</button>
+    <button onclick="AddFox()" class="add__btn" style="background-color: red">AddFox</button>
+    <button onclick="AddWolf()" class="add__btn" style="background-color: orange">AddWolf</button>
+    <button onclick="AddBear()" class="add__btn" style="background-color: gray">AddBear</button>
+    <button onclick="AddaLion()" class="add__btn" style="background-color: white">AddWLion</button>
+    <button onclick="KillAll()" class="add__btn" style="background-color: white; color: black">Kill all</button>
+
+</div>
+<div class="exanak__btns">
+    <button onclick="Spring()" class="btn__exanak" style="background-color: green">Spring</button>
+    <button onclick="Summer()" class="btn__exanak" style="background-color: yellow">Summer</button>
+    <button onclick="Autumn()" class="btn__exanak" style="background-color: #F5BB45">Autumn</button>
+    <button onclick="Winter()" class="btn__exanak" style="background-color: white">Winter</button>
+</div> 
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
